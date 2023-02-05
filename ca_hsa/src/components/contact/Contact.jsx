@@ -1,6 +1,24 @@
 import React from 'react'
 import "./contact.css"
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
+
+    const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_wvnlf6e', 'template_ca_hsa', form.current, 'KN8xVCsAB64NXFJkd')
+    .then((result) => {
+        alert("Message received");
+    }, (error) => {
+        console.log(error.text);
+    });
+      e.target.reset()
+  };
+
   return (
     <section className="contact section" id="contact">
         <h2 className="section__title">
@@ -49,15 +67,20 @@ const Contact = () => {
                     Send me your query
                 </h3>
 
-                <form className="contact__form">
+                <form ref={form} onSubmit={sendEmail} className="contact__form">
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Name</label>
-                        <input type="text" name="name" className='contact__form-input' placeholder='insert your name'/>
+                        <input type="text" name="name" className='contact__form-input' placeholder='Insert your name'/>
+                    </div>
+
+                    <div className="contact__form-div">
+                        <label className="contact__form-tag">Phone</label>
+                        <input type="phone" name="phone" className='contact__form-input' placeholder='Insert your phone number'/>
                     </div>
 
                     <div className="contact__form-div">
                         <label className="contact__form-tag">Mail</label>
-                        <input type="email" name="email" className='contact__form-input' placeholder='insert your email'/>
+                        <input type="email" name="email" className='contact__form-input' placeholder='Insert your email'/>
                     </div>
 
                     <div className="contact__form-div contact__form-area">
