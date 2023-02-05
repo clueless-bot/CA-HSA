@@ -10,7 +10,7 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_wvnlf6e', 'template_ca_hsa', form.current, 'KN8xVCsAB64NXFJkd')
+    emailjs.sendForm('service_wvnlf6e5f', 'template_ca_hsaa', form.current, 'aKN8xVCsAB64NXFJkda')
     .then((result) => {
         alert("Message received");
     }, (error) => {
