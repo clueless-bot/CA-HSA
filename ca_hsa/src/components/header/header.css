@@ -6,8 +6,6 @@
     z-index: var(--z-fixed);
     background-color: var(--body-color);
     white-space: nowrap;
-
-    
 }
 
 .nav{
@@ -26,7 +24,7 @@
 
 .nav__logo{
     margin-top: 10px;
-    margin-left: -10px;
+    margin-left: 7vw;
     width: 240px;
     height: auto;
 }
@@ -129,5 +127,11 @@
 
     .nav__list{
         column-gap: 0;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .nav__logo{
+        margin-left: 1px;
     }
   }
