@@ -9,12 +9,13 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    require("dotenv").config();
 
-    emailjs.sendForm('service_wvnlf6e5f', 'template_ca_hsaa', form.current, 'aKN8xVCsAB64NXFJkda')
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID ,form.current ,process.env.REACT_APP_PUBLIC_KEY)
     .then((result) => {
         alert("Message received");
     }, (error) => {
-        console.log(error.text);
+        alert(error.text);
     });
       e.target.reset()
   };
