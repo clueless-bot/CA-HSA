@@ -4,7 +4,7 @@ import "./team.css"
 const Team = () => {
   return (
     <div className="team__container" id="team">
-        <h1 className="team__heading">
+        <h1 className="team__heading" >
             Our Team <i className="uil uil-users-alt"></i>
         </h1>
         <img src={HeneelImage} alt="" className="team__photo" />
